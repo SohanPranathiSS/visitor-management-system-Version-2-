@@ -1,0 +1,16 @@
+# Ignore unnecessary files to reduce deployment size
+*.pyc
+__pycache__/
+.git/
+.gitignore
+README.md
+.DS_Store
+*.log
+static/uploads/*
+!static/uploads/.keep
+newLogic.py
+scan_Bussinesscard*
+ocr_app.py
+app.py
+flask_api.py
+from flask import Flask, request, jsonif.txt

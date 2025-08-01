@@ -8,6 +8,11 @@ const HomePage = () => {
   const handleBookDemo = () => {
     navigate('/bookademo');
   };
+
+  const handleFreeTrial = () => {
+    navigate('/register');
+  };
+
   return (
     <div className="home-container">
       <nav className="navbar">
@@ -221,7 +226,7 @@ const HomePage = () => {
   <h2>Ready to Modernize Your Front Desk?</h2>
   <p>Start your free trial or schedule a demo today to experience the power of a smart visitor management system.</p>
   <div className="cta-buttons">
-    <button className="hero-cta" >Start Your Free Trial</button>
+    <button className="hero-cta" onClick={handleFreeTrial}>Start Your Free Trial</button>
     <button className="hero-cta secondary" onClick={handleBookDemo}>Book a Demo</button>
   </div>
 </section>

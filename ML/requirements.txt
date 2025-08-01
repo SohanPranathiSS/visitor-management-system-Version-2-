@@ -1,8 +1,9 @@
+# Memory-optimized requirements for Render.com deployment
 Flask==2.3.3
 flask-cors==4.0.0
-Pillow
-numpy
-easyocr
-opencv-python-headless
+Pillow==10.0.0
+numpy==1.24.3
+opencv-python-headless==4.8.1.78
+easyocr==1.7.0
 Werkzeug==2.3.7
 gunicorn==21.2.0
