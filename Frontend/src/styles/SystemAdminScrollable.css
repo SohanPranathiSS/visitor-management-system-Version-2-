@@ -1,0 +1,534 @@
+/* System Admin Scrollable Styles - Full Page Scrolling */
+
+.system-admin-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 600px;
+  /* Removed height constraints for full page scrolling */
+}
+
+.system-admin-tabs {
+  flex-shrink: 0;
+  margin-bottom: 20px;
+}
+
+.system-admin-content {
+  flex: 1;
+  padding-right: 10px;
+  /* Removed overflow and height constraints for full page scrolling */
+}
+
+/* Visitor Type Data Scrollable Styles - Hybrid Scrolling */
+.visitor-type-data-content {
+  max-height: 75vh;
+  overflow-y: auto;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Visitor Statistics Scrollable Styles - Hybrid Scrolling */
+.visitor-statistics-content {
+  max-height: 75vh;
+  overflow-y: auto;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Reports Content Scrollable Styles - Hybrid Scrolling */
+.reports-content-scrollable {
+  flex: 1;
+  overflow-y: auto; /* Keep scrolling for content */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0; /* Allow shrinking within flex parent */
+}
+
+/* Overview Tab Specific Styles */
+.overview-tab {
+  padding: 2rem;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  font-size: 0.9rem;
+}
+
+/* Visitor Analytics Tab Specific Styles */
+.visitors-tab {
+  padding: 1rem;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.visitor-analytics {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  height: 100%;
+}
+
+.visitor-metrics {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.visitor-metrics h3 {
+  margin: 0 0 1.5rem 0;
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.metric-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.metric-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.metric-item span:first-child {
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.metric-value {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.overview-tab .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.overview-tab .stat-card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.overview-tab .stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.overview-tab .stat-card h3 {
+  margin: 0 0 0.5rem 0;
+  color: #666;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.overview-tab .stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.overview-tab .stat-change {
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.overview-tab .stat-change.positive {
+  color: #27ae60;
+}
+
+.overview-tab .stat-change.negative {
+  color: #e74c3c;
+}
+
+.overview-tab .charts-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2.5rem;
+  flex: 1;
+}
+
+.overview-tab .chart-container {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  min-height: auto;
+}
+
+.overview-tab .chart-container h3 {
+  margin: 0 0 1rem 0;
+  color: #2c3e50;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.overview-tab .chart-container canvas {
+  max-height: 400px;
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* Webkit scrollbar styling - For content sections */
+.visitor-type-data-content::-webkit-scrollbar,
+.visitor-statistics-content::-webkit-scrollbar,
+.reports-content-scrollable::-webkit-scrollbar {
+  width: 8px;
+}
+
+.visitor-type-data-content::-webkit-scrollbar-track,
+.visitor-statistics-content::-webkit-scrollbar-track,
+.reports-content-scrollable::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.visitor-type-data-content::-webkit-scrollbar-thumb,
+.visitor-statistics-content::-webkit-scrollbar-thumb,
+.reports-content-scrollable::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.visitor-type-data-content::-webkit-scrollbar-thumb:hover,
+.visitor-statistics-content::-webkit-scrollbar-thumb:hover,
+.reports-content-scrollable::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Individual tab content styling */
+.settings-tab,
+.users-tab,
+.audit-tab,
+.backup-tab,
+.maintenance-tab {
+  padding: 20px 0;
+}
+
+/* Users table container with scrolling */
+.users-table-container {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.users-table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+}
+
+.users-table-container table thead {
+  position: sticky;
+  top: 0;
+  background: #f8f9fa;
+  z-index: 10;
+}
+
+.users-table-container table th,
+.users-table-container table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.users-table-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.users-table-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.users-table-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+/* Audit logs table container */
+.audit-table-container {
+  max-height: 500px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.audit-table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+}
+
+.audit-table-container table thead {
+  position: sticky;
+  top: 0;
+  background: #f8f9fa;
+  z-index: 10;
+}
+
+.audit-table-container table th,
+.audit-table-container table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.audit-table-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.audit-table-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.audit-table-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+/* Backups table container */
+.backups-table-container {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.backups-table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+}
+
+.backups-table-container table thead {
+  position: sticky;
+  top: 0;
+  background: #f8f9fa;
+  z-index: 10;
+}
+
+.backups-table-container table th,
+.backups-table-container table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.backups-table-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.backups-table-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.backups-table-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+/* Form sections spacing */
+.settings-section {
+  margin-bottom: 30px;
+}
+
+.user-form-section {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Ensure proper scrolling on smaller screens - Hybrid Scrolling */
+@media (max-height: 768px) {
+  .visitor-type-data-content,
+  .visitor-statistics-content,
+  .reports-content-scrollable {
+    max-height: 50vh;
+  }
+  
+  .users-table-container,
+  .audit-table-container,
+  .backups-table-container {
+    max-height: 300px;
+  }
+  
+  .overview-tab .chart-container {
+    min-height: 250px;
+  }
+  
+  .overview-tab .chart-container canvas {
+    max-height: 200px;
+  }
+}
+
+@media (max-height: 600px) {
+  .visitor-type-data-content,
+  .visitor-statistics-content,
+  .reports-content-scrollable {
+    max-height: 40vh;
+  }
+  
+  .users-table-container,
+  .audit-table-container,
+  .backups-table-container {
+    max-height: 250px;
+  }
+  
+  .overview-tab .chart-container {
+    min-height: 200px;
+  }
+  
+  .overview-tab .chart-container canvas {
+    max-height: 150px;
+  }
+}
+
+/* Responsive design for Overview section */
+@media (max-width: 1200px) {
+  .overview-tab .charts-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .overview-tab .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .visitor-analytics {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .overview-tab {
+    padding: 1.5rem;
+    gap: 2rem;
+  }
+  
+  .visitors-tab {
+    padding: 0.5rem;
+    gap: 1rem;
+  }
+  
+  .overview-tab .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .overview-tab .stat-card {
+    padding: 1.5rem;
+  }
+  
+  .overview-tab .stat-number {
+    font-size: 1.75rem;
+  }
+  
+  .overview-tab .chart-container {
+    padding: 1.5rem;
+    min-height: 300px;
+  }
+  
+  .overview-tab .chart-container canvas {
+    max-height: 200px;
+  }
+  
+  .visitor-analytics {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .visitor-metrics {
+    padding: 1rem;
+  }
+  
+  .metrics-grid {
+    gap: 0.75rem;
+  }
+  
+  .metric-item {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .overview-tab .stat-card {
+    padding: 1.25rem;
+  }
+  
+  .overview-tab .stat-number {
+    font-size: 1.5rem;
+  }
+  
+  .overview-tab .chart-container {
+    padding: 1.25rem;
+    min-height: 250px;
+  }
+  
+  .overview-tab .chart-container h3 {
+    font-size: 0.9rem;
+  }
+  
+  .visitor-metrics {
+    padding: 0.75rem;
+  }
+  
+  .visitor-metrics h3 {
+    font-size: 1rem;
+  }
+  
+  .metric-item {
+    padding: 0.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+  
+  .metric-value {
+    font-size: 1rem;
+  }
+}
