@@ -3,8 +3,8 @@ import { checkInVisitor, getHosts } from '../utils/apiService';
 import '../styles/VisitorCheckInPage.css';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-// This is your OCR API for extracting an ID number from a photo, if needed on this page.
-const OCR_API_URL = 'http://127.0.0.1:5000/extract-id-number';
+// OCR API URL - You can deploy this ML service separately or integrate with your backend
+const OCR_API_URL = process.env.REACT_APP_ML_SERVICE_URL || 'http://127.0.0.1:5000/extract-id-number';
 
 const VisitorCheckInPage = () => {
     // --- Get prefillData and hostName from the route's state ---
